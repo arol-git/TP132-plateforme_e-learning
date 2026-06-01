@@ -1,0 +1,65 @@
+{
+  "cours": [
+    {
+      "titre":"Programmation C",
+      "chapitres":[
+        {
+          "titre":"kijuyhtr",
+          "lecons":[
+            {
+              "id":1,
+              "titre":"okijuhytgr",
+              "contenu":"tyrtgrsfsrgtyujuhgfghught hgrdrteyr",
+              "mots":[
+                "Asdfg"
+              ],
+              "qcm":[
+              ]
+            }
+          ]
+        },
+        {
+          "titre":";lkjhgf",
+          "lecons":[
+          ]
+        }
+      ]
+    },
+    {
+      "titre":"Les Pointeurs",
+      "chapitres":[
+      ]
+    },
+    {
+      "titre":"malloc",
+      "chapitres":[
+      ]
+    },
+    {
+      "titre":"free",
+      "chapitres":[
+      ]
+    },
+    {
+      "titre":"0",
+      "chapitres":[
+      ]
+    },
+    {
+      "titre":"sdfg",
+      "chapitres":[
+      ]
+    },
+    {
+      "titre":"asdfb",
+      "chapitres":[
+      ]
+    }
+  ],
+  "progression": {
+    "score_total": 0,
+    "qcm_passes": 0,
+    "terminees": [
+    ]
+  }
+}
