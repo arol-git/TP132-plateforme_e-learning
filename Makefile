@@ -1,23 +1,36 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -std=c99 -g
-LDFLAGS = 
-EXEC = lms
+all: lms
 
-SRC = main.c syllabus.c qcm.c progression.c contenu.c persistence.c utils.c
-OBJ = $(SRC:.c=.o)
+lms: main.o syllabus.o qcm.o progression.o contenu.o persistence.o utils.o
+	gcc main.o syllabus.o qcm.o progression.o contenu.o persistence.o utils.o -o lms
 
-all: $(EXEC)
+main.o: main.c syllabus.h qcm.h contenu.h progression.h persistence.h utils.h
+	gcc -c main.c 
 
-$(EXEC): $(OBJ)
-	$(CC) -o $@ $^ $(LDFLAGS)
+syllabus.o: syllabus.c syllabus.h utils.h
+	gcc -c syllabus.c
 
-%.o: %.c
-	$(CC) -c $< -o $@ $(CFLAGS)
+qcm.o: qcm.c qcm.h syllabus.h utils.h
+	gcc -c qcm.c 
+
+progression.o: progression.c progression.h syllabus.h utils.h
+	gcc -c progression.c 
+
+contenu.o: contenu.c contenu.h syllabus.h qcm.h utils.h
+	gcc -c contenu.c 
+
+persistence.o: persistence.c persistence.h syllabus.h qcm.h utils.h
+	gcc -c persistence.c
+
+utils.o: utils.c utils.h
+	gcc -c utils.c 
+
+run:
+	./lms
 
 clean:
-	rm -f $(OBJ) $(EXEC)
+	rm -f *.o lms
 
-mrproper: clean
+propre: clean
 	rm -f database.json
 
-.PHONY: all clean mrproper
+.PHONY: all clean propre run
